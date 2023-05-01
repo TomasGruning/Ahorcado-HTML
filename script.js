@@ -23,6 +23,7 @@ reiniciar.addEventListener('click', iniciar);
 function iniciar(event){ 
   atril.src = 'assets/img0.png';
   reiniciar.disabled = true;
+  letras_usadas = [];
   errores_cont = 0; aciertos_cont = 0;
   
   //crea los spans para los errores
@@ -78,11 +79,17 @@ function teclaPresionada(event) {
   if(errores_cont == 7) {
     document.removeEventListener('keydown', teclaPresionada);
     reiniciar.disabled = false;
+
+    //muestra cual era la palabra
+    for(let x=0; x < palabra_elegida.length; x++) {
+      spans_palabra[x].innerHTML = palabra_elegida[x].toUpperCase();
+    }
   }
   else if(aciertos_cont == palabra_elegida.length) {
     atril.src = "assets/win.png";
     document.removeEventListener('keydown', teclaPresionada);
     reiniciar.disabled = false;
+
   }
 
 }
