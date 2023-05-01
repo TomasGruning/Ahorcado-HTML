@@ -72,7 +72,7 @@ const atril = document.getElementById('imagen');
 
 //boton 'generar palabra'
 const reiniciar = document.getElementById('jugar');
-reiniciar.addEventListener('click', iniciar);
+iniciar(); reiniciar.addEventListener('click', iniciar);
 
 function iniciar(event){ 
   atril.src = 'assets/img0.png';
