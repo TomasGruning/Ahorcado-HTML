@@ -40,9 +40,6 @@ murcielago
 narval
 nutria
 ornitorrinco
-oso-panda
-oso-pardo
-oso-polar
 paloma
 pantera
 pavo
