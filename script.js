@@ -64,6 +64,7 @@ function teclaPresionada(event) {
     letras_usadas.push(tecla);
     letrasErradas.appendChild(document.createElement('span'));
     spans_errores[errores_cont].innerHTML = tecla.toUpperCase();
+    console.log(letras_usadas[errores_cont] + " : " + errores_cont);
     errores_cont++;
 
     atril.src = "assets/img" + errores_cont + ".png";

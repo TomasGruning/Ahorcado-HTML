@@ -3,7 +3,7 @@ body {
     background-image: url("assets/wallpaper.jpg");
     background-size: cover;
     font-family:Arial, Helvetica, sans-serif;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 header {
@@ -20,6 +20,7 @@ h1 {
 
 main {
     width: 80%;
+    background: rgba(255, 255, 255, 0.1);
     margin: auto;
     padding: 40px;
     border-radius: 20px;
@@ -29,6 +30,7 @@ main {
 
 #imagen {
     width: 300px;
+    margin-left: 50px;
 }
 
 #errores {
@@ -37,7 +39,7 @@ main {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     display: flex;
-    margin-left: 27px;
+    margin-left: 47px;
 }
 
 #errores span{
@@ -49,9 +51,13 @@ main {
     top: 30px;
 }
 
+#texto {
+    display: flex;
+}
+
 #palabra_a_adivinar {
     height: 7em;
-    padding-left: 47px;
+    padding-left: 62px;
 }
 
 #palabra_a_adivinar span{
@@ -67,8 +73,9 @@ main {
 }
 
 #jugar{
-    margin-top: 0px;
     background: rgba(255, 255, 255, 0.1);
+    margin-top: 95px;
+    margin-left: 37px;
     border: 1px solid rgba(25, 25, 25, 0.1);
     border-radius: 15px;
     box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
@@ -76,12 +83,15 @@ main {
     flex-basis: 20%;
     font-size: 18px;
     height: 45px;
-    width: 170px;
-    margin-left: 27px;
+    width: 770px;
 }
 
 #resultado {
-    margin-top: 40px;
+    padding-top: 43px;
+    padding-left: 65px;
     height: 3em;
     width: 24em;
+    font-family: Comic Sans MS;
+    font-size: 20px;
+    font-weight: bold;
 }
