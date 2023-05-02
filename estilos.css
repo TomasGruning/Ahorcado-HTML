@@ -30,7 +30,7 @@ main {
 
 #imagen {
     width: 300px;
-    margin-left: 75px;
+    margin-left: 45px;
 }
 
 #errores {
@@ -46,6 +46,7 @@ main {
     width: 20px;
     height: 2.3em;
     font-size: 1.4em;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     margin-top: 10px;
     padding-left: 30px;
@@ -58,14 +59,14 @@ main {
 
 #palabra_a_adivinar {
     height: 7em;
-    padding-left: 62px;
+    padding-left: 57px;
 }
 
 #palabra_a_adivinar span{
     height: 1.2em;
     width: 30px;
     font-size: 2em;
-    border-bottom: 3px solid black;
+    border-bottom: 4px solid black;
     padding-top: 70px;
     vertical-align: bottom;
     text-align: center;
@@ -85,4 +86,8 @@ main {
     font-size: 18px;
     height: 45px;
     width: 770px;
+}
+
+#jugar:hover {
+    background: rgba(255, 255, 255, 0.4);
 }
