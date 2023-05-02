@@ -7,7 +7,7 @@ const palabras = [
   'aguila',
   'ardilla',
   'armadillo',
-  'avetruz',
+  'avestruz',
   'ballena',
   'buho',
   'burro',
@@ -72,13 +72,22 @@ const atril = document.getElementById('imagen');
 
 //boton 'generar palabra'
 const reiniciar = document.getElementById('jugar');
-iniciar(); reiniciar.addEventListener('click', iniciar);
+
+//inicia y reinicia el juego si se presiona enter o el boton 'Generar Palabra'
+iniciar(); reiniciar.addEventListener('click', iniciar); 
 
 function iniciar(event){ 
-  atril.src = 'assets/img0.png';
+  //evita que se pueda generar otra palabra hasta que termine el juego
   reiniciar.disabled = true;
+  document.removeEventListener('keydown', iniciar);
+
+  //reinicia las variables
+  atril.src = 'assets/img0.png';
   letras_usadas = [];
   errores_cont = 0; aciertos_cont = 0;
+  
+  const parrafo = document.getElementById('palabra_a_adivinar');
+  parrafo.innerHTML = '';
   
   //crea los spans para los errores
   const letrasErradas = document.getElementById('errores');
@@ -87,12 +96,8 @@ function iniciar(event){
     letrasErradas.appendChild(document.createElement('span'));
   }
   
-  const parrafo = document.getElementById('palabra_a_adivinar');
-  parrafo.innerHTML = '';
-  
   //elije una palabra aleatoria
   palabra_elegida = palabras[Math.floor(Math.random() * palabras.length)];
-  console.log(palabra_elegida); 
 
   //crea lo guiones para cada letra de la palabra
   for(let x=0; x < palabra_elegida.length; x++) {
@@ -100,7 +105,6 @@ function iniciar(event){
   }
   
   document.addEventListener('keydown', teclaPresionada);
-  console.log(palabras);
 }
 
 
@@ -131,19 +135,22 @@ function teclaPresionada(event) {
   }
 
   if(errores_cont == 7) {
-    document.removeEventListener('keydown', teclaPresionada);
-    reiniciar.disabled = false;
-
+    
     //muestra cual era la palabra
     for(let x=0; x < palabra_elegida.length; x++) {
       spans_palabra[x].innerHTML = palabra_elegida[x].toUpperCase();
     }
+    habilitarVolverJugar();
   }
   else if(aciertos_cont == palabra_elegida.length) {
     atril.src = "assets/win.png";
-    document.removeEventListener('keydown', teclaPresionada);
-    reiniciar.disabled = false;
-
+    habilitarVolverJugar();
   }
 
+}
+
+function habilitarVolverJugar() {
+  document.removeEventListener('keydown', teclaPresionada);
+  document.addEventListener('keydown', iniciar);
+  reiniciar.disabled = false;
 }
