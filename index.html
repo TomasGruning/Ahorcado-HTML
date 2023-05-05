@@ -27,29 +27,30 @@
                 border: none;
                 border-radius: 90px;
                 text-align: center;
-                font-size: 36px;
-                width: 57vh;
+                font-size: 6.5vh;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                width: 55vh;
                 height: 15vh;
-                transition: transform 0.5s ease;
+                transition: transform 0.46s ease;
             }
             button:hover {
                 transform: scale(1.15);
             }
 
             #capitales {
-                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(assets/capitales.jpg);
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/capitales.jpg);
                 background-size: 60vh;
             }
             
             #animales {
-                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(assets/animales.jpeg);
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/animales.jpeg);
                 background-size: 57vh;
             }
         </style>
     </head>
 
     <body>
-        <button id="capitales" onClick="logJSONData(this); location.href=   'juego.html'">capitales</button>
+        <button id="capitales" onClick="logJSONData(this); location.href='juego.html'">capitales</button>
         <button id="animales" onClick="logJSONData(this); location.href='juego.html'">animales</button>
     </body>
 </html>
