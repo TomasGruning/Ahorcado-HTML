@@ -21,34 +21,35 @@
             }
             
             button {
-                background-position: center;
                 background-size: cover;
                 background-position: center;
+                color: whitesmoke;
                 border: none;
                 border-radius: 90px;
                 text-align: center;
                 font-size: 36px;
                 width: 57vh;
                 height: 15vh;
-                transition: transform 0.53s ease;
-                background-color: rgba(0, 0, 0, 0.5);
+                transition: transform 0.5s ease;
             }
             button:hover {
                 transform: scale(1.15);
             }
 
             #capitales {
-                background: url(assets/capitales.jpg);
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(assets/capitales.jpg);
+                background-size: 60vh;
             }
             
             #animales {
-                background: url(assets/animales.jpeg);
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(assets/animales.jpeg);
+                background-size: 57vh;
             }
         </style>
     </head>
 
     <body>
-        <button id="capitales" onClick="logJSONData(this); location.href='juego.html'">capitales</button>
+        <button id="capitales" onClick="logJSONData(this); location.href=   'juego.html'">capitales</button>
         <button id="animales" onClick="logJSONData(this); location.href='juego.html'">animales</button>
     </body>
 </html>

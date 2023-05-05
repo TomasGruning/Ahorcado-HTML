@@ -10,7 +10,7 @@ async function logJSONData(comp) {
 }
 
 logJSONData().then((response) => {
-  palabras = response;
+  palabras = response;  console.log(palabras);
   const atril = document.getElementById('imagen');
 
   //boton 'Generar Palabra'
@@ -59,7 +59,7 @@ logJSONData().then((response) => {
     //si la letra esta en la palabra
     let tecla = event.key.toLowerCase(); 
     for(let x=0; x < palabra_elegida.length; x++) {
-      if(tecla == palabra_elegida[x]) {
+      if(tecla == palabra_elegida[x] || tecla == palabra_elegida[x].toLowerCase()) {
         acerto = true;
         aciertos_cont++;
         spans_palabra[x].innerHTML = tecla.toUpperCase();
@@ -97,71 +97,3 @@ logJSONData().then((response) => {
     reiniciar.disabled = false;
   }
 })
-
-
-console.log(palabras);
-/*const palabras = [
-  'aguila',
-  'ardilla',
-  'armadillo',
-  'avestruz',
-  'ballena',
-  'buho',
-  'burro',
-  'caballo',
-  'cabra',
-  'caiman',
-  'calamar',
-  'cangrejo',
-  'castor',
-  'ciervo',
-  'cocodrilo',
-  'condor',
-  'conejo',
-  'culebra',
-  'delfin',
-  'elefante',
-  'foca',
-  'gacela',
-  'ganso',
-  'gato',
-  'gaviota',
-  'gorila',
-  'grulla',
-  'halcon',
-  'hipopotamo',
-  'iguana',
-  'jirafa',
-  'lemur',
-  'leon',
-  'loro',
-  'mantis',
-  'mapache',
-  'marmota',
-  'medusa',
-  'murcielago',
-  'narval',
-  'nutria',
-  'ornitorrinco',
-  'paloma',
-  'pantera',
-  'pavo',
-  'pelicano',
-  'perro',
-  'pinguino',
-  'puma',
-  'serpiente',
-  'tejon',
-  'tiburon',
-  'tigre',
-  'tortuga',
-  'trucha',
-  'tucan',
-  'unicornio',
-  'vaca',
-  'yaguarete',
-  'zebra',
-  'zorro'
-];*/
-
-
