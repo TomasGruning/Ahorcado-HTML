@@ -8,37 +8,47 @@
         <script src="script.js" defer></script>
         <style>
             body {
-                min-height: 80vh;
+                background: url(assets/wallpaper.jpg);
+                background-size: cover;
+                min-height: 100vh;
                 margin: auto;
-                justify-content: center;
-                align-content: space-around;
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: center;
+                align-content: center;
                 flex-wrap: wrap;
-                background-color: brown;
-                gap: 40px 2px;
+                gap: 19vh 15vh;
             }
             
-            input {
+            button {
+                background-position: center;
+                background-size: cover;
+                background-position: center;
                 border: none;
                 border-radius: 90px;
-                color: white;
                 text-align: center;
                 font-size: 36px;
-                width: 20%;
-                height: 50px;
+                width: 57vh;
+                height: 15vh;
+                transition: transform 0.53s ease;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            button:hover {
+                transform: scale(1.15);
             }
 
             #capitales {
-                background-color: blue;
+                background: url(assets/capitales.jpg);
+            }
+            
+            #animales {
+                background: url(assets/animales.jpeg);
             }
         </style>
     </head>
 
     <body>
-        <input id="capitales" type=button onClick="elegirCategoria(this); location.href='juego.html'" value='capitales'>
-        <input id="capitales" type=button onClick="elegirCategoria(this)" value='capitales'>
-
-
+        <button id="capitales" onClick="logJSONData(this); location.href='juego.html'">capitales</button>
+        <button id="animales" onClick="logJSONData(this); location.href='juego.html'">animales</button>
     </body>
 </html>

@@ -4,12 +4,8 @@ let errores_cont = 0, aciertos_cont = 0;
 let acerto = false;
 let palabras = []; 
 
-function elegirCategoria(comp) {
-  return comp.id;
-}
-
-async function logJSONData() {
-  const response = await fetch("palabras/" + elegirCategoria() + ".json");
+async function logJSONData(comp) {
+  const response = await fetch("palabras/" + comp.id + ".json");
   return await response.json();
 }
 
