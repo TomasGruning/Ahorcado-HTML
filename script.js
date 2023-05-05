@@ -2,10 +2,16 @@ let palabra_elegida;
 let letras_usadas = []; 
 let errores_cont = 0, aciertos_cont = 0;
 let acerto = false;
-let palabras = []; 
+let palabras = [];
 
-async function logJSONData(comp) {
-  const response = await fetch("palabras/" + comp.id + ".json");
+
+const botonCategoria = document.getElementsByClassName("categoria");
+for (let x = 0 ; x < botonCategoria.length; x++) {
+  botonCategoria[x].addEventListener('click' , function(){logJSONData(this.id)}); 
+}
+
+async function logJSONData(id) {
+  const response = await fetch("palabras/" + id + ".json");
   return await response.json();
 }
 
